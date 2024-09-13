@@ -43,7 +43,6 @@ public class RestTemplateApp {
         code += responseEntity.getBody();
 
         // Delete user
-        requestEntity = new HttpEntity<>(user, headers);
         responseEntity = restTemplate.exchange(URL + "/" + user.getId(),
                 HttpMethod.DELETE, requestEntity, String.class);
         System.out.println("Delete Response: " + responseEntity.getBody());
